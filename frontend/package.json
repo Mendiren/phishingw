@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "tailwind:init": "./node_modules/.bin/tailwindcss init -p",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@tailwindcss/postcss": "^4.1.13",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
