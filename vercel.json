@@ -4,12 +4,15 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/dist" }
+      "config": { "distDir": "dist" }
     },
-    { "src": "api/server.js", "use": "@vercel/node" }
+    {
+      "src": "api/server.js",
+      "use": "@vercel/node"
+    }
   ],
   "rewrites": [
-    { "src": "/api/(.*)", "dest": "/api/server.js" },
-    { "src": "/(.*)", "dest": "/frontend/$1" }
+    { "source": "/api/(.*)", "destination": "/api/server.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
